@@ -42,18 +42,25 @@ function calcularOperacao(operacao, num1, num2) {
 function getBotResponse(userMessage) {
   if (userMessage.toLowerCase().includes('quero ver sua logo') || userMessage.toLowerCase().includes('me envie sua logo')) {
     return '<img src="monoma.png" alt="Logo da Monoma">';
-  } else if (userMessage.toLowerCase().includes('Me envie uma foto de um gato')) {
+  } else if (userMessage.toLowerCase().includes('foto de um gato')) {
     return '<img src="https://www.pngall.com/wp-content/uploads/2016/05/Kitten.png" alt="gatinho fofo">';
-  } else if (userMessage.toLowerCase().includes('Me envie um vídeo do curso')) {
-    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/P_wSfurHIzI" title="Fundamentos do Design Digital Aula 32" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> shh não conta a ninguém! 😉';
+  } else if (userMessage.toLowerCase().includes('video random')) {
+    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/ba7--Hp7EQU" title="BEAT ZÉ DA MANGA 🥭 - Aaah zé da manga (FUNK REMIX) by Sr. Nescau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> Agora tente: "video phonk"';
+  } else if (userMessage.toLowerCase().includes('video phonk')) {
+    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/dvQJIgjlR3I" title="MoonDeity - NEON BLADE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
   }
    else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
     return 'Sei lá... pergunta para Carlos.';
   } else if (userMessage.toLowerCase().includes("perguntas") || userMessage.toLowerCase().includes('Perguntas')) {
-    return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Você pode me enviar uma foto da sua logo?.'
+    return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Você pode me enviar uma foto? \n10.Você pode me enviar um vídeo? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.'
   } else if (userMessage.toLowerCase().includes('como você está')) {
     return 'Estou bem, obrigada por perguntar! 😃';
-  } else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
+  } else if (userMessage.toLowerCase().includes("Você pode me enviar uma foto")) {
+    return 'Claro, tente "Me envie sua logo" ou "Me envie uma foto de um gato". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
+  } else if (userMessage.toLowerCase().includes('Você pode me enviar um vídeo')) {
+    return 'Sim! Tente "Me envie um video phonk" ou "Me envie um video random". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐'
+  }
+   else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
     return 'Olá! Como posso ajudar?';
   } else if (userMessage.toLowerCase().includes('tudo bem')) {
     return 'Sim, estou bem! :)';
@@ -62,11 +69,11 @@ function getBotResponse(userMessage) {
   } else if (userMessage.toLowerCase().includes('sobre você')) {
     return 'Algumas curiosidades sobre mim são: a Monoma é uma assistente virtual criada por Kauê Vieira, nomeada por Carlos Henrique Borges e sua logo foi Feita Por Daline Soares, A Monoma foi criada para um projeto acadêmico sobre inteligência artificial.';
   } else if (userMessage.toLowerCase().includes('habilidade especial')) {
-    return 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas.';
+    return 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas, posso enviar imagens, vídeos e resolver contas envolvendo as operações básicas.';
   } else if (userMessage.toLowerCase().includes('função')) {
-    return 'A função da Monoma é servir como uma assistente virtual para facilitar a vida dos usuários, fornecendo suporte, informações e executando tarefas de forma rápida e eficiente.';
+    return 'A função da Monoma é servir como uma assistente virtual para facilitar a vida dos usuários, fornecendo suporte, informações e executando tarefas de forma rápida e eficiente. E também divertir o usuário.';
   } else if (userMessage.toLowerCase().includes('o que você pode fazer')) {
-    return 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas. 🥲';
+    return 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas 🥲. No momento posso resolver contas básicas de matemática, enviar imagens e videos.';
   } else if (userMessage.toLowerCase().includes('surgiu sua logo')) {
     return 'Foi Daline que fez, Diga a ela que ficou bem legal! 😉';
   } else if (userMessage.toLowerCase().includes('quanto é') || userMessage.toLowerCase().includes('calcule')) {
