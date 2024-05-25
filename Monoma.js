@@ -42,10 +42,10 @@ function calcularOperacao(operacao, num1, num2) {
 function getBotResponse(userMessage) {
   if (userMessage.toLowerCase().includes('quero ver sua logo') || userMessage.toLowerCase().includes('me envie sua logo')) {
     return '<img src="monoma.png" alt="Logo da Monoma">';
-  } else if (userMessage.toLowerCase().includes('me envie uma foto de um gato')) {
+  } else if (userMessage.toLowerCase().includes('Me envie uma foto de um gato')) {
     return '<img src="https://www.pngall.com/wp-content/uploads/2016/05/Kitten.png" alt="gatinho fofo">';
-  } else if (userMessage.toLowerCase().includes('me envie um video do curso')) {
-    return '<iframe width="1052" height="592" src="https://www.youtube.com/embed/P_wSfurHIzI" title="Fundamentos do Design Digital Aula 32" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> shh não conta a ninguém! 😉';
+  } else if (userMessage.toLowerCase().includes('Me envie um vídeo do curso')) {
+    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/P_wSfurHIzI" title="Fundamentos do Design Digital Aula 32" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> shh não conta a ninguém! 😉';
   }
    else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
     return 'Sei lá... pergunta para Carlos.';
@@ -110,7 +110,7 @@ function appendMessage(sender, message) {
     botLogoContainer.classList.add('bot-logo-container');
 
     const botLogo = document.createElement('img');
-    botLogo.src = 'monoma.jpg'; // Substitua pelo caminho da sua logo
+    botLogo.src = 'monoma.png'; // Substitua pelo caminho da sua logo
     botLogo.classList.add('bot-logo');
     botLogoContainer.appendChild(botLogo);
 
