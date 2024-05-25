@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+:root {
+
+--cor1: #007bff;
+--cor2: #E3EFFC;
+--cor3: #10195C;
+--cor4: #238C3D;
+--cor5: #02590F;
+
+--fonte-padrao: Arial, sans-serif;
+--fonte-destaque: 'Roboto', sans-serif;
+
+}
+
+body {
+    font-family: var(--fonte-padrao);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+  }
+  
+  .chat-container {
+    max-width: 99%;
+    height: 600px;
+    margin:auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--cor2);
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .chat-box {
+    flex: 1;
+    height: 300px;
+    /* overflow-y: scroll; */
+    overflow: auto;
+    padding: 10px;
+  }
+  
+  .user-message {
+    text-align: right;
+    color: var(--cor3);
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    
+  }
+  
+  .bot-message {
+    text-align: justify;
+    color: var(--cor4);
+    font-size: 1.3em;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    font-weight: bold;
+    margin:  10px 20px 30px 20px;
+    min-width: 300px;
+    max-width: 500px;
+  }
+
+  .bot-logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .bot-logo {
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .bot-info {
+    font-weight: bolder;
+    margin-right: 5px;
+    color: black;
+  }
+  
+  .input-container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px;
+    margin: auto;
+    background-color: var(--cor2);
+    border-radius: 10px;
+  }
+  
+  .input-container input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .input-container button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor1);
+    color: #fff;
+    cursor: pointer;
+  }
+
+h1{
+text-align: center;
+color: white;
+font-family: var(--fonte-destaque);
+font-size: 4em;
+font-weight: bolder;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.158);
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+h3{
+text-align: center;
+color: white;
+margin-top: 0px;
+}
+
+header {
+height: 120px;
+width: 100%;
+align-content: center;
+background-color: var(--cor1);
+margin: 0px;
+margin: auto;
+box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.47);
+}
