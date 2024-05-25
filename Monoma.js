@@ -52,12 +52,12 @@ function getBotResponse(userMessage) {
    else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
     return 'Sei lá... pergunta para Carlos.';
   } else if (userMessage.toLowerCase().includes("perguntas") || userMessage.toLowerCase().includes('Perguntas')) {
-    return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Você pode me enviar uma foto? \n10.Você pode me enviar um vídeo? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.'
+    return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Pode me enviar uma foto? \n10.Pode me enviar um vídeo? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.'
   } else if (userMessage.toLowerCase().includes('como você está')) {
     return 'Estou bem, obrigada por perguntar! 😃';
-  } else if (userMessage.toLowerCase().includes("Você pode me enviar uma foto")) {
+  } else if (userMessage.toLowerCase().includes("Pode me enviar uma foto")) {
     return 'Claro, tente "Me envie sua logo" ou "Me envie uma foto de um gato". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
-  } else if (userMessage.toLowerCase().includes('Você pode me enviar um vídeo')) {
+  } else if (userMessage.toLowerCase().includes('Pode me enviar um vídeo')) {
     return 'Sim! Tente "Me envie um video phonk" ou "Me envie um video random". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐'
   }
    else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
