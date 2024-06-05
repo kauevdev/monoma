@@ -47,56 +47,54 @@ function calcularOperacao(operacao, num1, num2) {
   return resultado;
 }
 
+const responses = {
+  'quero ver sua logo': '<img src="monoma.png" alt="Logo da Monoma">',
+  'me envie sua logo': '<img src="monoma.png" alt="Logo da Monoma">',
+  'foto de um gato': '<img src="https://www.pngall.com/wp-content/uploads/2016/05/Kitten.png" alt="gatinho fofo">',
+  'video random': '<iframe width="300" height="300" src="https://www.youtube.com/embed/ba7--Hp7EQU" title="BEAT ZÉ DA MANGA 🥭 - Aaah zé da manga (FUNK REMIX) by Sr. Nescau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  'video phonk': '<iframe width="300" height="300" src="https://www.youtube.com/embed/dvQJIgjlR3I" title="MoonDeity - NEON BLADE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  'seu nome': 'Sei lá... pergunta para Carlos.',
+  'perguntas': 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Pode me enviar uma foto? \n10.Pode me enviar um video? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.',
+  'como você está': 'Estou bem, obrigada por perguntar! 😃',
+  'enviar uma foto': 'Claro, tente "Me envie sua logo" ou "Me envie uma foto de um gato". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐',
+  'enviar um video': 'Sim! Tente "Me envie um video phonk" ou "Me envie um video random". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐',
+  'oi': 'Olá! Como posso ajudar?',
+  'olá': 'Olá! Como posso ajudar?',
+  'tudo bem': 'Sim, estou bem! :)',
+  'você é humano': 'Não, sou uma assistente virtual criada para um trabalho sobre IA.',
+  'você é uma pessoa': 'Não, sou uma assistente virtual criada para um trabalho sobre IA.',
+  'sobre você': 'Algumas curiosidades sobre mim são: a Monoma é uma assistente virtual criada por Kauê Vieira, nomeada por Carlos Henrique Borges e sua logo foi Feita Por Daline Soares, A Monoma foi criada para um projeto acadêmico sobre inteligência artificial.',
+  'habilidade especial': 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas, posso enviar imagens, vídeos e resolver contas envolvendo as operações básicas.',
+  'função': 'A função da Monoma é servir como uma assistente virtual para facilitar a vida dos usuários, fornecendo suporte, informações e executando tarefas de forma rápida e eficiente. E também divertir o usuário.',
+  'o que você pode fazer': 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas 🥲. No momento posso resolver contas básicas de matemática, enviar imagens e videos.',
+  'surgiu sua logo': 'Foi Daline que fez, Diga a ela que ficou bem legal! 😉',
+};
+
 function getBotResponse(userMessage) {
-  if (userMessage.toLowerCase().includes('quero ver sua logo') || userMessage.toLowerCase().includes('me envie sua logo')) {
-    return '<img src="monoma.png" alt="Logo da Monoma">';
-  } else if (userMessage.toLowerCase().includes('foto de um gato')) {
-    return '<img src="https://www.pngall.com/wp-content/uploads/2016/05/Kitten.png" alt="gatinho fofo">';
-  } else if (userMessage.toLowerCase().includes('video random')) {
-    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/ba7--Hp7EQU" title="BEAT ZÉ DA MANGA 🥭 - Aaah zé da manga (FUNK REMIX) by Sr. Nescau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-  } else if (userMessage.toLowerCase().includes('video phonk')) {
-    return '<iframe width="300" height="300" src="https://www.youtube.com/embed/dvQJIgjlR3I" title="MoonDeity - NEON BLADE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-  } else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
-    return 'Sei lá... pergunta para Carlos.';
-  } else if (userMessage.toLowerCase().includes("perguntas") || userMessage.toLowerCase().includes('Perguntas')) {
-    return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Pode me enviar uma foto? \n10.Pode me enviar um video? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.'
-  } else if (userMessage.toLowerCase().includes('como você está')) {
-    return 'Estou bem, obrigada por perguntar! 😃';
-  } else if (userMessage.toLowerCase().includes("enviar uma foto")) {
-    return 'Claro, tente "Me envie sua logo" ou "Me envie uma foto de um gato". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
-  } else if (userMessage.toLowerCase().includes("enviar um video")) {
-    return 'Sim! Tente "Me envie um video phonk" ou "Me envie um video random". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
-  } else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
-    return 'Olá! Como posso ajudar?';
-  } else if (userMessage.toLowerCase().includes('tudo bem')) {
-    return 'Sim, estou bem! :)';
-  } else if (userMessage.toLowerCase().includes('você é humano') || userMessage.toLowerCase().includes('você é uma pessoa')) {
-    return 'Não, sou uma assistente virtual criada para um trabalho sobre IA.';
-  } else if (userMessage.toLowerCase().includes('sobre você')) {
-    return 'Algumas curiosidades sobre mim são: a Monoma é uma assistente virtual criada por Kauê Vieira, nomeada por Carlos Henrique Borges e sua logo foi Feita Por Daline Soares, A Monoma foi criada para um projeto acadêmico sobre inteligência artificial.';
-  } else if (userMessage.toLowerCase().includes('habilidade especial')) {
-    return 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas, posso enviar imagens, vídeos e resolver contas envolvendo as operações básicas.';
-  } else if (userMessage.toLowerCase().includes('função')) {
-    return 'A função da Monoma é servir como uma assistente virtual para facilitar a vida dos usuários, fornecendo suporte, informações e executando tarefas de forma rápida e eficiente. E também divertir o usuário.';
-  } else if (userMessage.toLowerCase().includes('o que você pode fazer')) {
-    return 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas 🥲. No momento posso resolver contas básicas de matemática, enviar imagens e videos.';
-  } else if (userMessage.toLowerCase().includes('surgiu sua logo')) {
-    return 'Foi Daline que fez, Diga a ela que ficou bem legal! 😉';
-  } else if (userMessage.toLowerCase().includes('quanto é') || userMessage.toLowerCase().includes('calcule')) {
-    // Verifica se a mensagem contém palavras-chave relacionadas a cálculos
+  const keys = Object.keys(responses);
+  const message = userMessage.toLowerCase();
+
+  for (const key of keys) {
+    if (message.includes(key)) {
+      return responses[key];
+    }
+  }
+
+  if (message.includes('quanto é') || message.includes('calcule')) {
     const operacoes = ['mais', 'menos', 'vezes', 'dividido'];
     let operacaoEncontrada = '';
-    operacoes.forEach(operacao => {
-      if (userMessage.toLowerCase().includes(operacao)) {
+    for (const operacao of operacoes) {
+      if (message.includes(operacao)) {
         operacaoEncontrada = operacao;
+        break;
       }
-    });
+    }
 
     if (operacaoEncontrada) {
-      // Extrai os números da mensagem do usuário
-      const numeros = userMessage.match(/\d+/g);
+      const numeros = message.match(/\d+/g);
       if (numeros && numeros.length >= 2) {
-        const num1 = parseFloat(numeros[0]);
+        const num1 = parseFloat(numeros[0
+]);
         const num2 = parseFloat(numeros[1]);
         const resultado = calcularOperacao(operacaoEncontrada, num1, num2);
         return `${resultado}. Achei fácil 😎`;
