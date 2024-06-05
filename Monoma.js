@@ -11,6 +11,14 @@ function sendMessage() {
   userInput.value = '';
 }
 
+// Função para enviar mensagem ao pressionar Enter
+userInput.addEventListener('keypress', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Impede o comportamento padrão de quebra de linha
+    sendMessage();
+  }
+});
+
 function calcularOperacao(operacao, num1, num2) {
   let resultado;
 
@@ -48,8 +56,7 @@ function getBotResponse(userMessage) {
     return '<iframe width="300" height="300" src="https://www.youtube.com/embed/ba7--Hp7EQU" title="BEAT ZÉ DA MANGA 🥭 - Aaah zé da manga (FUNK REMIX) by Sr. Nescau" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
   } else if (userMessage.toLowerCase().includes('video phonk')) {
     return '<iframe width="300" height="300" src="https://www.youtube.com/embed/dvQJIgjlR3I" title="MoonDeity - NEON BLADE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
-  }
-   else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
+  } else if (userMessage.toLowerCase().includes('seu nome') || userMessage.toLowerCase().includes('quem é você')) {
     return 'Sei lá... pergunta para Carlos.';
   } else if (userMessage.toLowerCase().includes("perguntas") || userMessage.toLowerCase().includes('Perguntas')) {
     return 'Aqui estão algumas sugestões de perguntas: \n1.Por que o seu nome é Monoma? \n2.Como você está? \n3.Quais são algumas curiosidades sobre você? \n4.A Monoma tem alguma habilidade especial? \n5.Qual é a função da Monoma? \n6.O que você pode fazer? \n7.Como surgiu sua logo?\n8.Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2") \n9.Pode me enviar uma foto? \n10.Pode me enviar um video? \n Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐.'
@@ -59,8 +66,7 @@ function getBotResponse(userMessage) {
     return 'Claro, tente "Me envie sua logo" ou "Me envie uma foto de um gato". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
   } else if (userMessage.toLowerCase().includes("enviar um video")) {
     return 'Sim! Tente "Me envie um video phonk" ou "Me envie um video random". Lembre-se que você deve digitar dessa mesma maneira, pois sou uma IA exata 🧐';
-  }
-   else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
+  } else if (userMessage.toLowerCase().includes('oi') || userMessage.toLowerCase().includes('olá')) {
     return 'Olá! Como posso ajudar?';
   } else if (userMessage.toLowerCase().includes('tudo bem')) {
     return 'Sim, estou bem! :)';
