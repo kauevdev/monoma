@@ -158,7 +158,7 @@ function getBotResponse(userMessage) {
   }
 
   // Verificar se o usuário solicita uma frase filosofica aleatória
-  if (message.includes('filosofica')) {
+  if (message.includes('filosófica')) {
     const randomFilosofiaIndex = Math.floor(Math.random() * filosofia.length);
     return filosofia[randomFilosofiaIndex];
   }
@@ -207,11 +207,31 @@ function getBotResponse(userMessage) {
     } else {
       return 'Desculpe, não entendi. Por favor, tente fornecer a operação matemática (adição, subtração, multiplicação ou divisão) seguida de dois números. Usando a função: Calcule Número1, Operação matemática(mais, menos, vezes, dividido) Número2. ';
     }
-  } else {
-    return 'Desculpe, não entendi.\n\nVocê gostaria de fazer alguma pergunta? Se sim, digite: "Perguntas".';
-  }
-}
+  }else {
+    const suggestions = [
+      'Me conte um fato interessante.',
+      'Me envie uma frase filosófica.',
+      'Me envie um vídeo aleatório.',
+      'Me envie uma imagem aleatória.',
+      'Me envie uma curiosidade.',
+      'Calcule num1 operação num2',
+      'Por que o seu nome é Monoma?',
+      'Quais são algumas curiosidades sobre você?',
+      'A Monoma tem alguma habilidade especial?',
+      'Qual é a função da Monoma?',
+      "O que você pode fazer?",
+      'Como surgiu sua logo?',
+      'Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2").'
+    ];
 
+    let suggestionMessage = 'Desculpe, não entendi. Aqui está uma lista de sugestões do que você pode pedir:\n\n';
+    suggestions.forEach((suggestion, index) => {
+      suggestionMessage += `${index + 1}. ${suggestion}\n`;
+    });
+
+    return suggestionMessage;
+}
+}
 
 function appendMessage(sender, message) {
   const messageElement = document.createElement('div');

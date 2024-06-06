@@ -130,6 +130,8 @@ div.input-container {
   margin: 10px 20px 30px 0px;
   min-width: 300px;
   max-width: 100%;
+  white-space: pre-line; 
+  max-width: 80vw;
 }
 
 .bot-logo-container {
