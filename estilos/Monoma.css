@@ -20,11 +20,12 @@
 
 html, body {
   width: 100vw;
-  height: 100vh;
+  height: 99vh;
   display: flex;
   flex-direction: column;
   font-family: var(--fonte-padrao);
   background-color: white;
+  margin: auto;
 }
 
 header {
@@ -76,7 +77,7 @@ div.input-container {
   border-top: 1px solid #ccc;
 }
 
-.input-container input {
+div.input-container > input {
   flex: 1;
   padding: 12px 20px; /* Padding ajustado para um input mais agradável */
   border-radius: 30px; /* Bordas arredondadas */
@@ -86,15 +87,17 @@ div.input-container {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
   transition: all 0.3s ease; /* Transição suave */
   font-size: 1em; /* Tamanho da fonte ajustado */
+  resize: vertical; /* Permite redimensionamento vertical */
+  overflow-y: auto; /* Adiciona barra de rolagem vertical quando necessário */
 }
 
-.input-container input:focus {
+div.input-container input:focus {
   outline: none;
   border-color: var(--cor1); /* Cor da borda ao focar */
   box-shadow: 0 2px 10px rgba(0, 123, 255, 0.3); /* Sombra ao focar */
 }
 
-.input-container button {
+div.input-container > button {
   padding: 12px 20px; /* Padding ajustado */
   margin-left: 10px;
   border: none;
@@ -106,17 +109,18 @@ div.input-container {
   transition: all 0.3s ease; /* Transição suave */
 }
 
-.input-container button:hover {
+div.input-container > button:hover {
   background-color: rgb(0, 72, 150); /* Efeito de hover */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra ao hover */
 }
 
 .user-message {
-  text-align: right;
   color: var(--cor3);
   font-size: 1.3em;
   margin-bottom: 10px;
   font-weight: bold;
+  text-align: right;
+  word-wrap: break-word;
 }
 
 .bot-message {
@@ -127,12 +131,23 @@ div.input-container {
   align-items: flex-start;
   flex-direction: column;
   font-weight: bold;
-  margin: 10px 20px 30px 0px;
+  margin: 20px 20px 20px 0px;
   min-width: 300px;
   max-width: 100%;
   white-space: pre-line; 
   max-width: 80vw;
 }
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  min-width: 430px;
+  min-height: 300px;
+}
+
 
 .bot-logo-container {
   display: flex;

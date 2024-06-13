@@ -75,7 +75,7 @@ const botInfo = {
   'seu nome': 'Sei lá... pergunta para Carlos.',
   'sobre você': 'Algumas curiosidades sobre mim são: a Monoma é uma assistente virtual criada por Kauê Vieira, nomeada por Carlos Henrique Borges e sua logo foi Feita Por Daline Soares, A Monoma foi criada para um projeto acadêmico sobre inteligência artificial.',
   'habilidade especial': 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas, posso enviar imagens, vídeos e resolver contas envolvendo as operações básicas.',
-  'função': 'A função da Monoma é servir como uma assistente virtual para facilitar a vida dos usuários, fornecendo suporte, informações e executando tarefas de forma rápida e eficiente. E também divertir o usuário.',
+  'função':'A Monoma é um chatbot inicialmente criado como parte de uma atividade acadêmica sobre inteligências artificiais. Sua função principal é interagir com os usuários, respondendo a perguntas com respostas pré-programadas. Embora seja limitada, a Monoma pode realizar cálculos matemáticos básicos, enviar vídeos, imagens, compartilhar frases filosóficas e fornecer fatos interessantes.',
   'o que você pode fazer': 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas 🥲. No momento posso resolver contas básicas de matemática, enviar imagens e vídeos.',
   'surgiu sua logo': 'Foi Daline que fez, Diga a ela que ficou bem legal! 😉',
 };
@@ -119,13 +119,25 @@ const filosofia = [
 ];
 
 
-const iframes = {
-  'iframe': '<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
-};
+const iframes = [
+  '<iframe width="0" height="0" src="https://www.youtube.com/embed/5iifwb4oc1g" title="você é o sigma da bahia? #shortvideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  '<iframe width="435" height="245" src="https://www.youtube.com/embed/ibbTjZ6k37Q" title="LULA PHONK - FEIJÃO PURO METAMORPHOSIS • edit by @hidesz_17" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  '<iframe width="435" height="241" src="https://www.youtube.com/embed/r_wjTjwyY6o" title="Memory reboot (Ultra slowed &amp; reverb)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  '<iframe width="400" height="225" src="https://www.youtube.com/embed/YOz7dsnjS8U" title="Zé da Manga" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  '<iframe width="438" height="246" src="https://www.youtube.com/embed/LaKbp8wuQus" title="Welcome To The Mato -  Mas vários Personagens/Famosos Cantam  (AI, IA Cover)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+  '<iframe width="438" height="246" src="https://www.youtube.com/embed/HBGv61cJwrI" title="É ISSO QUE TE CAUSA TIMIDEZ E FOBIA SOCIAL (MOSTRANDO NA PRÁTICA)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
+];
 
-const images = {
-  'imagem': '<img src="imagem.png" alt="Descrição da imagem">',
-};
+const images = [
+  '<img src="https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1." alt="Gatinho fofo" class="responsive-img">',
+  '<img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="cachorro" class="responsive-img">', 
+  '<img src="https://images.pexels.com/photos/724507/pexels-photo-724507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="por do sol" class="responsive-img">', 
+  '<img src="https://images.pexels.com/photos/3489072/pexels-photo-3489072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="lua" class="responsive-img">', 
+  '<img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="IA" class="responsive-img">', 
+  // '<img src="" alt="" class="responsive-img">', 
+  // Adicione mais imagens conforme necessário
+];
+
 
 const customResponses = {
   'resposta_personalizada': 'Aqui está uma resposta personalizada para você!',
@@ -158,16 +170,15 @@ function getBotResponse(userMessage) {
   }
 
   // Verificar se o usuário solicita uma frase filosofica aleatória
-  if (message.includes('filosófica')) {
+  if (message.includes('frase filosofica')) {
     const randomFilosofiaIndex = Math.floor(Math.random() * filosofia.length);
     return filosofia[randomFilosofiaIndex];
   }
 
   // Verificar iframes
-  for (const iframe in iframes) {
-    if (message.includes(iframe)) {
-      return iframes[iframe];
-    }
+  if (message.includes('vídeo aleatorio')) {
+    const randomIframesIndex = Math.floor(Math.random() * iframes.length);
+    return iframes[randomIframesIndex];
   }
 
   // Verificar imagens
@@ -175,6 +186,11 @@ function getBotResponse(userMessage) {
     if (message.includes(image)) {
       return images[image];
     }
+  }
+
+  if (message.includes('imagem aleatoria')) {
+    const randomImagemIndex = Math.floor(Math.random() * images.length);
+    return images[randomImagemIndex];
   }
 
   // Verificar outras respostas personalizadas
@@ -210,18 +226,15 @@ function getBotResponse(userMessage) {
   }else {
     const suggestions = [
       'Me conte um fato interessante.',
-      'Me envie uma frase filosófica.',
-      'Me envie um vídeo aleatório.',
-      'Me envie uma imagem aleatória.',
-      'Me envie uma curiosidade.',
-      'Calcule num1 operação num2',
+      'Me envie uma frase filosofica.',
+      'Me envie um vídeo aleatorio.',
+      'Me envie uma imagem aleatoria.',
       'Por que o seu nome é Monoma?',
       'Quais são algumas curiosidades sobre você?',
       'A Monoma tem alguma habilidade especial?',
       'Qual é a função da Monoma?',
-      "O que você pode fazer?",
       'Como surgiu sua logo?',
-      'Faça um cálculo matemático (por exemplo: "Calcule 2 mais 2").'
+      'Faça um cálculo matemático (por exemplo: "Calcule 29 dividido por 2").'
     ];
 
     let suggestionMessage = 'Desculpe, não entendi. Aqui está uma lista de sugestões do que você pode pedir:\n\n';
@@ -245,7 +258,7 @@ function appendMessage(sender, message) {
     botLogoContainer.classList.add('bot-logo-container');
 
     const botLogo = document.createElement('img');
-    botLogo.src = 'monoma.png'; // Substitua pelo caminho da sua logo
+    botLogo.src = 'imagens/monoma.png'; // Substitua pelo caminho da sua logo
     botLogo.classList.add('bot-logo');
     botLogoContainer.appendChild(botLogo);
 
@@ -256,7 +269,7 @@ function appendMessage(sender, message) {
 
     botReplyContainer.appendChild(botLogoContainer);
 
-    const botText = document.createElement('span');
+    const botText = document.createElement('div');
     botText.innerHTML = message; // Use innerHTML para renderizar a imagem
     botReplyContainer.appendChild(botText);
 
