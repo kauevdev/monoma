@@ -20,7 +20,7 @@
 
 html, body {
   width: 100vw;
-  height: 97vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: var(--fonte-padrao);
@@ -144,7 +144,7 @@ div.input-container > button:hover {
 }
 
 iframe {
-  width: 100%;
+  width: 120%;
   height: auto;
   /* min-width: 430px;
   min-height: 300px; */
