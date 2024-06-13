@@ -144,8 +144,10 @@ div.input-container > button:hover {
 }
 
 iframe {
-  min-width: 430px;
-  min-height: 300px;
+  width: 100%;
+  height: auto;
+  /* min-width: 430px;
+  min-height: 300px; */
 }
 
 
