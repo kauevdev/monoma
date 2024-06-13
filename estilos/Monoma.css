@@ -20,7 +20,7 @@
 
 html, body {
   width: 100vw;
-  height: 99vh;
+  height: 97vh;
   display: flex;
   flex-direction: column;
   font-family: var(--fonte-padrao);

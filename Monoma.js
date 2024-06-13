@@ -176,7 +176,7 @@ function getBotResponse(userMessage) {
   }
 
   // Verificar iframes
-  if (message.includes('vídeo aleatorio')) {
+  if (message.includes('video aleatorio')) {
     const randomIframesIndex = Math.floor(Math.random() * iframes.length);
     return iframes[randomIframesIndex];
   }
@@ -227,7 +227,7 @@ function getBotResponse(userMessage) {
     const suggestions = [
       'Me conte um fato interessante.',
       'Me envie uma frase filosofica.',
-      'Me envie um vídeo aleatorio.',
+      'Me envie um video aleatorio.',
       'Me envie uma imagem aleatoria.',
       'Por que o seu nome é Monoma?',
       'Quais são algumas curiosidades sobre você?',
@@ -237,7 +237,7 @@ function getBotResponse(userMessage) {
       'Faça um cálculo matemático (por exemplo: "Calcule 29 dividido por 2").'
     ];
 
-    let suggestionMessage = 'Desculpe, não entendi. Aqui está uma lista de sugestões do que você pode pedir:\n\n';
+    let suggestionMessage = 'Desculpe, não entendi, verifique se você está digitando da maneira correta. Aqui está uma lista de sugestões do que você pode me pedir:\n\n';
     suggestions.forEach((suggestion, index) => {
       suggestionMessage += `${index + 1}. ${suggestion}\n`;
     });
