@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 802px) {
+    header {
+        position: static;
+    }
+
+    main.chat-container {
+        margin: 0px auto;
+    }
+
+    div.input-container  {
+        position: static;
+    }
+}

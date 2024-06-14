@@ -37,6 +37,11 @@ header {
   text-align: center;
   background-color: var(--cor1);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.47);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 header > h1 {
@@ -57,21 +62,21 @@ main.chat-container {
   flex: 1 1 auto;
   width: 100%;
   max-width: 800px;
-  margin-top: 200px;
-  margin: auto;
+  margin: 120px auto 70px auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow-y: auto;
   background-color: var(--cor2);
-  height: calc(100vh - 200px)
+  padding: 0 10px;
+  height: calc(100vh - 190px);
 }
 
 div.chat-box {
   flex: 1 1 auto;
   overflow-y: auto;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
 }
 
 div.input-container {
@@ -84,6 +89,8 @@ div.input-container {
   position: fixed;
   bottom: 0;
   left: 0;
+  right: 0;
+  z-index: 1000;
   width: 100%;
   max-width: 100%;
 }
