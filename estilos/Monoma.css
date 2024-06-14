@@ -32,6 +32,8 @@ header {
   flex: 0 0 auto;
   height: 120px;
   width: 100%;
+  max-width: 800px;
+  margin: auto;
   text-align: center;
   background-color: var(--cor1);
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.47);
@@ -46,7 +48,7 @@ header > h1 {
   margin: 0;
 }
 
-header > h3 {
+header > h2 {
   color: white;
   margin-top: 0;
 }
@@ -54,12 +56,16 @@ header > h3 {
 main.chat-container {
   flex: 1 1 auto;
   width: 100%;
+  max-width: 800px;
+  margin-top: 200px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   border: 1px solid #ccc;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: auto;
   background-color: var(--cor2);
+  height: calc(100vh - 200px)
 }
 
 div.chat-box {
@@ -74,7 +80,12 @@ div.input-container {
   justify-content: center; /* Centraliza horizontalmente */
   padding: 10px;
   background-color: var(--cor2);
-  border-top: 1px solid #ccc;
+  /* border-top: 1px solid #ccc; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
 }
 
 div.input-container > input {
@@ -134,9 +145,15 @@ div.input-container > button:hover {
   margin: 20px 20px 20px 0px;
   min-width: 300px;
   max-width: 100%;
-  white-space: pre-line; 
-  max-width: 80vw;
+  white-space: pre-wrap; 
+  max-width: 87vw;
 }
+
+.bot-message div {
+  margin: 0; /* Remove margens padrão dos parágrafos */
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
 
 .responsive-img {
   max-width: 100%;
@@ -144,8 +161,8 @@ div.input-container > button:hover {
 }
 
 iframe {
-  width: 120%;
-  height: auto;
+  width: 140%;
+  height: 300px;
   /* min-width: 430px;
   min-height: 300px; */
 }
@@ -158,8 +175,12 @@ iframe {
 }
 
 .bot-logo {
+  border-radius: 50%;
   height: 30px;
   margin-right: 5px;
+  margin-bottom: 2px;
+  border: 3px solid black;
+  box-sizing: content-box;
 }
 
 .bot-info {

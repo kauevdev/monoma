@@ -19,34 +19,6 @@ userInput.addEventListener('keypress', function(event) {
   }
 });
 
-function calcularOperacao(operacao, num1, num2) {
-  let resultado;
-
-  switch (operacao.toLowerCase()) {
-    case 'mais':
-      resultado = num1 + num2;
-      break;
-    case 'menos':
-      resultado = num1 - num2;
-      break;
-    case 'vezes':
-      resultado = num1 * num2;
-      break;
-    case 'dividido':
-      if (num2 === 0) {
-        resultado = 'Não é possível dividir por zero! Vai aprender matemática básica! 💀';
-      } else {
-        resultado = num1 / num2;
-      }
-      break;
-    default:
-      resultado = 'Operação inválida. Por favor, escolha entre adição, subtração, multiplicação ou divisão.';
-      break;
-  }
-
-  return resultado;
-}
-
 // Objetos para diferentes tipos de respostas
 const greetings = {
   'oi': 'Olá! Como posso ajudar?',
@@ -72,11 +44,11 @@ const greetings = {
 };
 
 const botInfo = {
-  'seu nome': 'Sei lá... pergunta para Carlos.',
-  'sobre você': 'Algumas curiosidades sobre mim são: a Monoma é uma assistente virtual criada por Kauê Vieira, nomeada por Carlos Henrique Borges e sua logo foi Feita Por Daline Soares, A Monoma foi criada para um projeto acadêmico sobre inteligência artificial.',
-  'habilidade especial': 'Como uma assistente virtual, minha habilidade especial é ajudar os usuários com suas perguntas e tarefas, posso enviar imagens, vídeos e resolver contas envolvendo as operações básicas.',
-  'função':'A Monoma é um chatbot inicialmente criado como parte de uma atividade acadêmica sobre inteligências artificiais. Sua função principal é interagir com os usuários, respondendo a perguntas com respostas pré-programadas. Embora seja limitada, a Monoma pode realizar cálculos matemáticos básicos, enviar vídeos, imagens, compartilhar frases filosóficas e fornecer fatos interessantes.',
-  'o que você pode fazer': 'Na teoria eu poderia fornecer informações sobre diversos tópicos, responder perguntas e auxiliar em tarefas simples. No entanto, Kauê ficou com preguiça de criar mais códigos para me ensinar mais coisas 🥲. No momento posso resolver contas básicas de matemática, enviar imagens e vídeos.',
+  'seu nome': 'Não sei, também gostaria de saber! Quem sabe Carlos, um dia diga o porquê 🙃',
+  'sobre você': 'Eu sou um chat-bot criado por Kauê Vieira e nomeado por Carlos Henrique Borges. Minha logo foi feita por Daline Soares. Inicialmente, fui desenvolvido como parte de um projeto acadêmico, mas Kauê tem me utilizado para armazenar informações e realizar testes.',
+  'habilidade especial': 'Sou um chat-bot com habilidades especiais! Posso enviar imagens, vídeos, compartilhar fatos interessantes e frases filosóficas',
+  'função':'A Monoma é um chatbot inicialmente criado como parte de uma atividade acadêmica. Sua função principal é interagir com os usuários, respondendo a perguntas com respostas pré-programadas. Embora seja limitada, a Monoma pode enviar vídeos, imagens, compartilhar frases filosóficas e fornecer fatos interessantes.',
+  'o que você pode fazer': 'Posso enviar imagens, vídeos, compartilhar fatos interessantes e frases filosóficas.',
   'surgiu sua logo': 'Foi Daline que fez, Diga a ela que ficou bem legal! 😉',
 };
 
@@ -103,8 +75,6 @@ const facts = [
   "A Ilha de Páscoa é a localização mais remota de qualquer civilização do mundo."
 ];
 
-
-
 const filosofia = [
   "Penso, logo existo. - René Descartes",
   "A vida é sem sentido sem a arte. - Platão",
@@ -117,7 +87,6 @@ const filosofia = [
   "O que não nos mata nos torna mais fortes. - Friedrich Nietzsche",
   "Quem luta com monstros deve acautelar-se para não se tornar também um monstro. Quando se olha muito tempo para um abismo, o abismo olha para você. - Friedrich Nietzsche",
 ];
-
 
 const iframes = [
   '<iframe width="0" height="0" src="https://www.youtube.com/embed/5iifwb4oc1g" title="você é o sigma da bahia? #shortvideo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>',
@@ -134,8 +103,6 @@ const images = [
   '<img src="https://images.pexels.com/photos/724507/pexels-photo-724507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="por do sol" class="responsive-img">', 
   '<img src="https://images.pexels.com/photos/3489072/pexels-photo-3489072.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="lua" class="responsive-img">', 
   '<img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="IA" class="responsive-img">', 
-  // '<img src="" alt="" class="responsive-img">', 
-  // Adicione mais imagens conforme necessário
 ];
 
 
@@ -169,26 +136,20 @@ function getBotResponse(userMessage) {
     return facts[randomFactIndex];
   }
 
-  // Verificar se o usuário solicita uma frase filosofica aleatória
-  if (message.includes('frase filosofica')) {
+  // Verificar se o usuário solicita uma frase filosófica aleatória
+  if (message.includes('frase')) {
     const randomFilosofiaIndex = Math.floor(Math.random() * filosofia.length);
     return filosofia[randomFilosofiaIndex];
   }
 
   // Verificar iframes
-  if (message.includes('video aleatorio')) {
+  if (message.includes('video') || message.includes('vídeo')) {
     const randomIframesIndex = Math.floor(Math.random() * iframes.length);
     return iframes[randomIframesIndex];
   }
 
   // Verificar imagens
-  for (const image in images) {
-    if (message.includes(image)) {
-      return images[image];
-    }
-  }
-
-  if (message.includes('imagem aleatoria')) {
+  if (message.includes('imagem')) {
     const randomImagemIndex = Math.floor(Math.random() * images.length);
     return images[randomImagemIndex];
   }
@@ -197,44 +158,17 @@ function getBotResponse(userMessage) {
   for (const response in customResponses) {
     if (message.includes(response)) {
       return customResponses[response];
-    }
-  }
-
-  if (message.includes('quanto é') || message.includes('calcule')) {
-    const operacoes = ['mais', 'menos', 'vezes', 'dividido'];
-    let operacaoEncontrada = '';
-    for (const operacao of operacoes) {
-      if (message.includes(operacao)) {
-        operacaoEncontrada = operacao;
-        break;
-      }
-    }
-
-    if (operacaoEncontrada) {
-      const numeros = message.match(/\d+/g);
-      if (numeros && numeros.length >= 2) {
-        const num1 = parseFloat(numeros[0]);
-        const num2 = parseFloat(numeros[1]);
-        const resultado = calcularOperacao(operacaoEncontrada, num1, num2);
-        return `${resultado}. Achei fácil 😎`;
-      } else {
-        return 'Por favor, forneça dois números para calcular.';
-      }
     } else {
-      return 'Desculpe, não entendi. Por favor, tente fornecer a operação matemática (adição, subtração, multiplicação ou divisão) seguida de dois números. Usando a função: Calcule Número1, Operação matemática(mais, menos, vezes, dividido) Número2. ';
-    }
-  }else {
     const suggestions = [
       'Me conte um fato interessante.',
-      'Me envie uma frase filosofica.',
-      'Me envie um video aleatorio.',
-      'Me envie uma imagem aleatoria.',
+      'Me envie uma frase filosófica.',
+      'Me envie um video aleatório.',
+      'Me envie uma imagem aleatória.',
       'Por que o seu nome é Monoma?',
-      'Quais são algumas curiosidades sobre você?',
+  'Quais são algumas curiosidades sobre você?',
       'A Monoma tem alguma habilidade especial?',
       'Qual é a função da Monoma?',
       'Como surgiu sua logo?',
-      'Faça um cálculo matemático (por exemplo: "Calcule 29 dividido por 2").'
     ];
 
     let suggestionMessage = 'Desculpe, não entendi, verifique se você está digitando da maneira correta. Aqui está uma lista de sugestões do que você pode me pedir:\n\n';
@@ -243,6 +177,7 @@ function getBotResponse(userMessage) {
     });
 
     return suggestionMessage;
+  }
 }
 }
 
