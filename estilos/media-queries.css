@@ -7,9 +7,12 @@
 
     main.chat-container {
         margin: 0px auto;
+        border: 1px solid #ccc;
+
     }
 
     div.input-container  {
         position: static;
+        border: 1px solid #ccc;
     }
 }

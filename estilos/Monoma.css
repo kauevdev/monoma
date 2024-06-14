@@ -24,7 +24,7 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: var(--fonte-padrao);
-  background-color: white;
+  background-color: var(--cor2);
   margin: auto;
 }
 
@@ -65,7 +65,7 @@ main.chat-container {
   margin: 120px auto 70px auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   border-radius: 10px;
   overflow-y: auto;
   background-color: var(--cor2);
