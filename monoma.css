@@ -43,7 +43,7 @@ header {
   right: 0;
   z-index: 1000;
 }
-
+/* 
 header span {
   float: left;
   color: white;
@@ -100,7 +100,7 @@ header menu > ul > li > a:hover {
   font-weight: bold;
   border: 2px solid black;
   width: 101%;
-}
+} */
 
 
 header  h1 {
