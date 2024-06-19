@@ -216,3 +216,12 @@ function appendMessage(sender, message) {
   chatBox.appendChild(messageElement);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+function clickMenu() {
+  if (itens.style.display == 'block') {     
+    itens.style.display = 'none'
+  } else {
+    itens.style.display = 'block'
+  }
+}
+
