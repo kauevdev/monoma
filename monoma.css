@@ -19,8 +19,6 @@
 }
 
 html, body {
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: var(--fonte-padrao);
@@ -28,11 +26,12 @@ html, body {
   margin: auto;
 }
 
+
 header {
   flex: 0 0 auto;
   height: 120px;
   width: 100%;
-  max-width: 800px;
+  max-width: 802px;
   margin: auto;
   text-align: center;
   background-color: var(--cor1);
@@ -43,17 +42,16 @@ header {
   right: 0;
   z-index: 1000;
 }
-/* 
+
+/* menu icon */
 header span {
-  float: left;
-  color: white;
   position: relative;
-  left: 3px;
-  top: 3px;
+  top: -89%;
+  left: -48%;
+  color: white;
   width: 20px;
   color: white;
   display: block;
-  text-align: center;
   padding: 10px;
   cursor: pointer;
 }
@@ -62,46 +60,50 @@ header span:hover {
   color: black;
 }
 
-header div#menu-container {
-  float: left;
-  width: 180px;
-  height: auto;
-}
-
-header menu {
-  display: none;
-  position: relative;
-  top: 40px;
-  left: -20px;
+div#menu-container {
+  position: fixed;
+  max-width: 802px;
+  height: 70px;
   background-color: white;
 
 }
 
-header menu > ul {
+div#menu-container menu {
+  display: none;
+  margin-top: 123px; /*para aparecer na tela (cancela o espaço do header) */
+} 
+
+div#menu-container menu > ul {
   list-style-type: none;
 }
 
-header menu > ul > li > a {
+div#menu-container li {
+  width: 180px;
+  display: inline-block;
+}
+
+div#menu-container > menu > ul > li > a {
   display: block;
   padding: 10px;
   text-decoration: none;
-  background-color: white;
-  color: black;
   text-align: center;
-  border: 1px solid black;
-  width: 100%;
-  margin: auto;
+  font-family: var(--fonte-padrao);
+  font-size: 0.9em;
+  background-color: white;
+  font-weight: bold;
+  color: var(--cor1);
+  text-shadow: 1px 1px px rgba(0, 0, 0, 0.329);
+  border: 2px solid var(--cor1);
   
 }
-
-header menu > ul > li > a:hover {
+div#menu-container menu > ul > li > a:hover {
   background-color: var(--cor1);
+  text-shadow: 1px 1px px rgba(0, 0, 0, 0.329);
   color: white;
+  font-size: 0.9em;
   font-weight: bold;
-  border: 2px solid black;
-  width: 101%;
-} */
-
+  border: 1px solid white;
+}
 
 header  h1 {
   color: white;
@@ -119,12 +121,12 @@ header  h2 {
 
 main.chat-container {
   flex: 1 1 auto;
-  width: 100%;
+  width: 100vw; /* deve ser para ocupar toda a tela */
   max-width: 800px;
   margin: 120px auto 70px auto;
   display: flex;
   flex-direction: column;
-  /* border: 1px solid #ccc; */
+  border: 1px solid #ccc;
   border-radius: 10px;
   overflow-y: auto;
   background-color: var(--cor2);
@@ -219,7 +221,6 @@ div.input-container > button:hover {
   margin: 0; /* Remove margens padrão dos parágrafos */
   text-align: left; /* Alinha o texto à esquerda */
 }
-
 
 .responsive-img {
   max-width: 100%;

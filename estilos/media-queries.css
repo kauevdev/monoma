@@ -3,6 +3,11 @@
 @media screen and (min-width: 802px) {
     header {
         position: static;
+        min-width: 802px;
+    }
+
+    header span {
+        display: none;
     }
 
     main.chat-container {
