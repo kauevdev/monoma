@@ -1,23 +1,25 @@
 @charset "UTF-8";
 
-@media screen and (min-width: 802px) {
+@media screen and (min-width: 1200px) {
     header {
         position: static;
         min-width: 802px;
     }
 
-    header span {
-        display: none;
-    }
-
     main.chat-container {
         margin: 0px auto;
+        border-radius: none;
         border: 1px solid #ccc;
+        border-bottom: none;
 
     }
 
     div.input-container  {
-        position: static;
+        width: 802px;
+        margin: auto;
         border: 1px solid #ccc;
+        border-top: none;
     }
+
 }
+

@@ -126,7 +126,6 @@ main.chat-container {
   margin: 120px auto 70px auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
   border-radius: 10px;
   overflow-y: auto;
   background-color: var(--cor2);
@@ -196,6 +195,7 @@ div.input-container > button:hover {
 .user-message {
   color: var(--cor3);
   font-size: 1.3em;
+  margin-top: 10px;
   margin-bottom: 10px;
   font-weight: bold;
   text-align: right;
@@ -255,3 +255,4 @@ iframe {
   margin-right: 5px;
   color: black;
 }
+
