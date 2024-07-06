@@ -21,5 +21,43 @@
         border-top: none;
     }
 
+/*     
+    aside.sidebar {
+        background-color: white;
+        position: fixed;
+        left: 1%;
+        width: 200px;
+    }
+    
+    div.sidebar-menu-container ul {
+        list-style: none;
+    }
+    
+    div.sidebar-menu-container a {
+        position: relative;
+        left: 9%;
+        min-width: 50%;
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+        font-family: var(--fonte-padrao);
+        font-size: 0.9em;
+        background-color: white;
+        font-weight: bold;
+        color: var(--cor1);
+        text-shadow: 1px 1px px rgba(0, 0, 0, 0.329);
+        border: 2px solid var(--cor1);
+    }
+    
+    div.sidebar-menu-container a:hover {
+        background-color: var(--cor1);
+        text-shadow: 1px 1px px rgba(0, 0, 0, 0.329);
+        color: white;
+        font-size: 0.9em;
+        font-weight: bold;
+        border: 1px solid white;
+    } */
+
 }
 
